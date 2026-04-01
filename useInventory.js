@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 
 // 1. Your Google Sheet ID (from the URL):
 //    https://docs.google.com/spreadsheets/d/SHEET_ID/edit
-const SHEET_ID = 'YOUR_SHEET_ID_HERE'
+const SHEET_ID = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR5FUDreARbu_k7U-8vQ-VonkCl0ANeG2ZMUI2EUZBSqNVwDTGCwaWIrj7LAmXfModflIYLX2zbkr5P/pubhtml?gid=115148873&single=true'
 
 // 2. The sheet tab name (default is "Sheet1")
 const SHEET_TAB = 'Inventory'
