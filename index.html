@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silverado Ranch LLC — Pre-Owned Cars | Wells, MN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0a0a0a; --charcoal: #141414; --steel: #1e1e1e; --border: #2a2a2a;
+  --muted: #555; --dim: #888; --text: #e8e4dc; --text-soft: #b0a89a;
+  --gold: #c8922a; --gold-light: #e0a93a;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--text); font-family: 'Barlow', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+/* ── PITCH BANNER ── */
+.pitch-banner { background: #0d0d1a; border-bottom: 2px solid #4a4aff; padding: 12px 40px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pitch-banner p { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.03em; color: #b0b0ff; }
+.pitch-banner strong { color: #fff; }
+.pitch-dot { width: 10px; height: 10px; border-radius: 50%; background: #4a4aff; flex-shrink: 0; animation: pulsedot 1.5s ease-in-out infinite; }
+@keyframes pulsedot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
+
+/* ── HEADER ── */
+header { position: sticky; top: 0; z-index: 100; background: rgba(10,10,10,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 64px; gap: 24px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+.logo-img { width: 42px; height: 42px; object-fit: contain; border-radius: 50%; }
+.logo-text { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 20px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text); white-space: nowrap; }
+.logo-text em { font-style: normal; color: var(--gold); }
+nav { display: flex; gap: 28px; }
+nav a { color: var(--dim); text-decoration: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+nav a:hover, nav a.active { color: var(--gold); }
+.header-cta { background: var(--gold); color: var(--black); font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; border: none; padding: 9px 20px; cursor: pointer; text-decoration: none; white-space: nowrap; transition: background 0.2s; }
+.header-cta:hover { background: var(--gold-light); }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 520px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 40px 56px;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('hero.png');
+  background-size: cover;
+  background-position: center 30%;
+  z-index: 0;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.75) 60%, rgba(10,10,10,0.97) 100%);
+  z-index: 1;
+}
+.hero-content { position: relative; z-index: 2; max-width: 680px; }
+.hero-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+.hero-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--gold); }
+.hero h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(52px, 8vw, 100px); text-transform: uppercase; line-height: 0.9; margin-bottom: 14px; }
+.hero h1 em { font-style: normal; color: var(--gold); display: block; }
+.hero-sub { font-size: 15px; color: var(--text-soft); line-height: 1.6; margin-bottom: 28px; max-width: 480px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-gold { background: var(--gold); color: var(--black); font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; border: none; padding: 14px 28px; cursor: pointer; text-decoration: none; transition: background 0.2s; display: inline-block; }
+.btn-gold:hover { background: var(--gold-light); }
+.btn-outline { background: transparent; color: var(--text); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--border); padding: 14px 28px; cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-block; }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── TRUST BAR ── */
+.trust-bar { background: var(--gold); padding: 12px 40px; display: flex; gap: 40px; overflow-x: auto; }
+.trust-bar span { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+.trust-bar span::before { content: '✓'; font-size: 14px; }
+
+/* ── FEATURED VEHICLES ── */
+.featured-section { background: var(--charcoal); padding: 56px 40px; }
+.featured-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 32px; gap: 24px; }
+.section-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.section-eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--gold); }
+.section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(32px, 4vw, 52px); text-transform: uppercase; line-height: 0.95; }
+.section-title em { font-style: normal; color: var(--gold); }
+.vehicle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); }
+.v-card { background: var(--black); overflow: hidden; }
+.v-card:hover .v-card-img img { transform: scale(1.05); }
+.v-card-img { aspect-ratio: 4/3; overflow: hidden; background: var(--steel); }
+.v-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
+.v-card-body { padding: 18px 20px 20px; }
+.v-card-year { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 22px; text-transform: uppercase; line-height: 1; }
+.v-card-trim { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; color: var(--gold); letter-spacing: 0.06em; text-transform: uppercase; margin: 2px 0 12px; }
+.v-card-specs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+.v-spec { background: var(--steel); border: 1px solid var(--border); color: var(--text-soft); font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; }
+.v-card-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 14px; }
+.v-price { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 26px; color: var(--gold-light); }
+.v-cta { background: var(--gold); color: var(--black); font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border: none; padding: 7px 14px; cursor: pointer; text-decoration: none; transition: background 0.15s; display: inline-block; }
+.v-cta:hover { background: var(--gold-light); }
+
+/* ── FINANCING STRIP ── */
+.financing-strip { background: linear-gradient(135deg, var(--charcoal) 0%, #1a1200 100%); border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); padding: 64px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.financing-strip h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; line-height: 0.9; margin-bottom: 20px; }
+.financing-strip h2 em { font-style: normal; color: var(--gold); display: block; }
+.financing-strip p { font-size: 15px; color: var(--text-soft); line-height: 1.7; margin-bottom: 12px; }
+.financing-points { display: flex; flex-direction: column; gap: 14px; }
+.financing-point { display: flex; align-items: flex-start; gap: 12px; }
+.fp-icon { color: var(--gold); font-size: 18px; flex-shrink: 0; }
+.fp-text { font-size: 14px; color: var(--text-soft); line-height: 1.5; }
+.fp-text strong { color: var(--text); display: block; font-size: 15px; margin-bottom: 2px; }
+
+/* ── WHY US ── */
+.why-section { padding: 72px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); }
+.why-card { background: var(--charcoal); padding: 28px 24px; }
+.why-card-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 48px; color: rgba(200,146,42,0.15); line-height: 1; margin-bottom: 12px; }
+.why-card-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 16px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+.why-card-body { font-size: 13px; color: var(--text-soft); line-height: 1.6; }
+.section-body { font-size: 15px; color: var(--text-soft); line-height: 1.7; max-width: 520px; }
+
+/* ── FOOTER ── */
+footer { background: var(--charcoal); border-top: 1px solid var(--border); padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+footer p { font-size: 12px; color: var(--muted); letter-spacing: 0.04em; line-height: 1.6; }
+.footer-logo { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 18px; text-transform: uppercase; color: var(--text-soft); }
+.footer-logo span { color: var(--gold); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .financing-strip { grid-template-columns: 1fr; gap: 40px; }
+  .vehicle-grid { grid-template-columns: 1fr 1fr; }
+  .why-section { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+  header { padding: 0 16px; }
+  nav { display: none; }
+  .pitch-banner, .page-header, .trust-bar, .featured-section, .financing-strip, .why-section { padding-left: 16px; padding-right: 16px; }
+  .vehicle-grid { grid-template-columns: 1fr; }
+  footer { padding: 24px 16px; flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<div class="pitch-banner">
+  <div class="pitch-dot"></div>
+  <p>🎨 <strong>Website Redesign Demo</strong> — This is a mockup of what Silverado Ranch LLC's website could look like, built by <strong>Ginger Murray · StormRise Media</strong></p>
+</div>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="logo.png" alt="Silverado Ranch LLC" class="logo-img">
+    <span class="logo-text">Silverado Ranch <em>LLC</em></span>
+  </a>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="financing.html">Financing</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <a href="tel:5079953567" class="header-cta">📞 507-995-3567</a>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Wells, Minnesota · Family Owned</div>
+    <h1>Pre-Owned <em>Cars</em></h1>
+    <p class="hero-sub">Good quality used cars · Reasonable prices · Friendly service.<br>All vehicles mechanically inspected with clean titles.</p>
+    <div class="hero-actions">
+      <a href="inventory.html" class="btn-gold">View All Inventory</a>
+      <a href="financing.html" class="btn-outline">Financing Options</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <span>Mechanically Inspected</span>
+  <span>Clean Titles</span>
+  <span>New Financing Available</span>
+  <span>Warranty on Financed Vehicles</span>
+  <span>Cards, Check &amp; Cash Accepted</span>
+  <span>The "Cash Talks" Dealer</span>
+  <span>Family Owned &amp; Operated</span>
+</div>
+
+<div class="featured-section">
+  <div class="featured-header">
+    <div>
+      <div class="section-eyebrow">On the Lot</div>
+      <div class="section-title">Featured <em>Vehicles</em></div>
+    </div>
+    <a href="inventory.html" class="btn-outline">View All Inventory →</a>
+  </div>
+  <div class="vehicle-grid">
+
+    <div class="v-card">
+      <div class="v-card-img"><img src="https://static.wixstatic.com/media/461da9_b2a1b26ca1614dc8921ec9d466bc64ac~mv2.jpg" alt="2018 GMC Sierra" loading="lazy"></div>
+      <div class="v-card-body">
+        <div class="v-card-year">2018 GMC Sierra 1500</div>
+        <div class="v-card-trim">SLE Double Cab · 5.3L V8</div>
+        <div class="v-card-specs"><span class="v-spec">155K mi</span><span class="v-spec">4x4</span><span class="v-spec">Truck</span></div>
+        <div class="v-card-footer"><div class="v-price">$19,950</div><a href="inventory.html" class="v-cta">Details</a></div>
+      </div>
+    </div>
+
+    <div class="v-card">
+      <div class="v-card-img"><img src="https://static.wixstatic.com/media/461da9_194185be4d9e4415a152cc7b5ff4a063~mv2.jpg" alt="2014 Buick Enclave" loading="lazy"></div>
+      <div class="v-card-body">
+        <div class="v-card-year">2014 Buick Enclave</div>
+        <div class="v-card-trim">Premium · AWD · 3.6L V6</div>
+        <div class="v-card-specs"><span class="v-spec">123K mi</span><span class="v-spec">AWD</span><span class="v-spec">3rd Row</span></div>
+        <div class="v-card-footer"><div class="v-price">$11,950</div><a href="inventory.html" class="v-cta">Details</a></div>
+      </div>
+    </div>
+
+    <div class="v-card">
+      <div class="v-card-img"><img src="https://static.wixstatic.com/media/461da9_47820985e6c5433fb97527f820f501d0~mv2.jpg" alt="2012 Jeep Grand Cherokee" loading="lazy"></div>
+      <div class="v-card-body">
+        <div class="v-card-year">2012 Jeep Grand Cherokee</div>
+        <div class="v-card-trim">Overland · AWD · 3.6L V6</div>
+        <div class="v-card-specs"><span class="v-spec">138K mi</span><span class="v-spec">AWD</span><span class="v-spec">SUV</span></div>
+        <div class="v-card-footer"><div class="v-price">$10,950</div><a href="inventory.html" class="v-cta">Details</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="financing-strip">
+  <div>
+    <div class="section-eyebrow">New Options Available</div>
+    <h2>Financing <em>That Works</em></h2>
+    <p>We've partnered with a new finance company that can work with most people — including those who've been turned down before. All financed vehicles come with a warranty.</p>
+    <br>
+    <a href="financing.html" class="btn-gold">Learn More</a>
+  </div>
+  <div class="financing-points">
+    <div class="financing-point">
+      <div class="fp-icon">✓</div>
+      <div class="fp-text"><strong>Most People Qualify</strong>Even if you've been turned down here before, come back and try again with our new lender.</div>
+    </div>
+    <div class="financing-point">
+      <div class="fp-icon">✓</div>
+      <div class="fp-text"><strong>Warranty Included</strong>Every vehicle financed through our new loan company comes with a warranty.</div>
+    </div>
+    <div class="financing-point">
+      <div class="fp-icon">✓</div>
+      <div class="fp-text"><strong>Call for Details</strong>Reach us at 507-995-3567 or 507-327-5878 to find out what you qualify for.</div>
+    </div>
+  </div>
+</div>
+
+<div class="why-section">
+  <div>
+    <div class="section-eyebrow">About Us</div>
+    <div class="section-title" style="margin-bottom:16px;">Why Buy <em>Here</em></div>
+    <p class="section-body">We're a small family-owned dealership in Wells, MN. Every vehicle on our lot is mechanically inspected with a clean title. Good quality used cars, reasonable prices, friendly service — that's what we're about.</p>
+    <br><br>
+    <a href="contact.html" class="btn-gold">Get In Touch</a>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-card-num">01</div>
+      <div class="why-card-title">Inspected</div>
+      <div class="why-card-body">Every vehicle is mechanically inspected before it hits our lot.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">02</div>
+      <div class="why-card-title">Clean Titles</div>
+      <div class="why-card-body">All of our vehicles have clean titles — no surprises.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">03</div>
+      <div class="why-card-title">Financed</div>
+      <div class="why-card-body">New lender on board — most people qualify, even with past issues.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">04</div>
+      <div class="why-card-title">Cash Talks</div>
+      <div class="why-card-body">We accept credit cards, checks, and cash. Cash talks — always.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Silverado Ranch <span>LLC</span></div>
+  <p>14552 State Hwy 22 · Wells, MN 56097<br>507-995-3567 · 507-327-5878</p>
+  <p style="color:var(--border)">© 2024 Silverado Ranch LLC</p>
+</footer>
+
+</body>
+</html>
